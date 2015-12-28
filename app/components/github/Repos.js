@@ -1,6 +1,11 @@
 import React from 'react';
 
 export default React.createClass({
+  propTypes: {
+    username: React.PropTypes.string.isRequired,
+    repos: React.PropTypes.array.isRequired
+  },
+
   render: function() {
     return (
       <div>

@@ -2,6 +2,11 @@ import React from 'react';
 import NotesList from './NotesList';
 
 export default React.createClass({
+  propTypes: {
+    username: React.PropTypes.string.isRequired,
+    notes: React.PropTypes.array.isRequired
+  },
+
   render: function () {
     return (
       <div>
