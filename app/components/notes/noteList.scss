@@ -1,0 +1,28 @@
+.note-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding-left: 10px;
+    border-bottom-color: #A5A5A5;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    height: 40px;
+    line-height: 39px;
+
+    &:first-child {
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-top-color: #A5A5A5;
+    }
+
+    &:nth-child(even) {
+      background: #ECECEC;
+    }
+
+    &:nth-child(odd) {
+      background: #F7F7F7;
+    }
+  }
+}
