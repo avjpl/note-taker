@@ -31,6 +31,10 @@ export default React.createClass({
     this.unbind('notes');
   },
 
+  handleAddNote: function(newNote) {
+    this.ref.child(this.props.params.username).child(this.state.notes.length).set(newNote);
+  },
+
   render: function() {
     return (
       <div>
@@ -43,7 +47,10 @@ export default React.createClass({
         </div>
 
         <div className="medium-4 columns">
-          <Notes username={this.props.params.username} notes={this.state.notes} />
+          <Notes username={this.props.params.username}
+                 notes={this.state.notes}
+                 addNote={this.handleAddNote}
+            />
         </div>
       </div>
     );
