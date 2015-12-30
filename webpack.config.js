@@ -26,10 +26,12 @@ module.exports = {
     )
   ],
   devSever: {
+    historyApiFallback: true,
     contentBase: __dirname + '/dist/',
     host: 'dev-webpack',
-    port: 8080,
+    port: 8080
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
