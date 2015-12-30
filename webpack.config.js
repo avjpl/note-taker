@@ -1,5 +1,7 @@
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
-    ExtractTextPlugin = require("extract-text-webpack-plugin");
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+var url = require('url');
 
 module.exports = {
   context: __dirname + '/app',
@@ -18,7 +20,9 @@ module.exports = {
       {
         host: 'localhost',
         port: 3000,
-        proxy: 'http://dev-webpack:8080/',
+        proxy: {
+          target: 'http://dev-webpack:8080',
+        }
       },
       {
         reload: true,
