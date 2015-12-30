@@ -7,10 +7,27 @@ export default React.createClass({
   },
 
   render: function() {
+    const repos = this.props.repos.map((repo, idx) => {
+      return (
+        <li key={idx}>
+          {
+            repo.html_url &&
+            <h5>
+              <a href={repo.html_url}>{repo.name}</a>
+            </h5>
+          }
+          {
+            repo.description &&
+              <p>{repo.description}</p>
+          }
+        </li>
+      )
+    });
+
     return (
       <div>
-        <p>Repos</p>
-        <p>Repos: {this.props.repos}</p>
+        <p>User Repos</p>
+        <ul className="list-reset">{repos}</ul>
       </div>
     );
   }
