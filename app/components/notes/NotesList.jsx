@@ -17,7 +17,7 @@ export default React.createClass({
     });
 
     return (
-      <ul className="note-list">
+      <ul className="note-list list-reset">
         {notes}
       </ul>
     );
