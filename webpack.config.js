@@ -41,11 +41,7 @@ module.exports = {
       {
         test: /\.js[x]?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react'],
-          plugins: ['transform-runtime'],
-        },
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
