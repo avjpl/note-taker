@@ -2,24 +2,20 @@ require('./noteList.scss');
 
 import React from 'react';
 
-export default React.createClass({
-  propTypes: {
-    notes: React.PropTypes.array.isRequired
-  },
-
-  render: function () {
-    const notes = this.props.notes.map((item, idx) => {
-      return (
+const NotesList = ({notes}) => {
+  return (
+    <ul className="note-list list-reset">
+      {notes.map((item, idx) => (
         <li key={idx}>
-          <span>{item['.value']}</span>
+          <span>{item}</span>
         </li>
-      )
-    });
+      ))}
+    </ul>
+  );
+}
 
-    return (
-      <ul className="note-list list-reset">
-        {notes}
-      </ul>
-    );
-  },
-});
+NotesList.propTypes = {
+  notes: React.PropTypes.array.isRequired,
+}
+
+export default NotesList;

@@ -1,21 +1,19 @@
 import React from 'react';
 import { History } from 'react-router';
 
-export default React.createClass({
-  mixins: [History],
+export default class SearchGithub extends React.Component {
 
-  getRef: function (ref) {
+  getRef = (ref) => {
     this.usernameRef = ref;
-  },
+  }
 
-  handleSubmit: function () {
+  handleSubmit = () => {
     const username = this.usernameRef.value;
     this.usernameRef.value = '';
+    this.props.history.pushState(null, '/profile/' + username);
+  }
 
-    this.history.pushState(null, '/profile/' + username);
-  },
-
-  render: function () {
+  render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="row top-bar-container">
@@ -31,5 +29,9 @@ export default React.createClass({
         </div>
       </form>
     );
-  },
-});
+  }
+}
+
+SearchGithub.propTypes = {
+  history: React.PropTypes.object.isRequired,
+};

@@ -11,13 +11,8 @@ function getUserInfo(username) {
 }
 
 export default {
-  getGithubInfo: (username) => {
+  getGithubInfo: username => {
     return axios.all([getRepos(username), getUserInfo(username)])
-      .then((info) => {
-        return {
-          repos: info[0].data,
-          bio: info[1].data
-        }
-      });
+      .then((info) => ({ repos: info[0].data, bio: info[1].data }));
   }
 };
