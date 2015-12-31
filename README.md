@@ -1,1 +1,1 @@
-# webpack-and-react-skeleton
+# Simple React Github Taker app with a Firebase backend.
